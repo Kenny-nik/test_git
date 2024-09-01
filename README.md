@@ -12,7 +12,7 @@
 ## Установка:
 1. Клонируйте репозиторий:
 ```
- https://github.com/ArtemZhitkov/homework.git
+ https://github.com/Kenny-nik/test_git.git
 ``` 
 2. Установите зависимости:
 ```
