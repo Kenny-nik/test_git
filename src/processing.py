@@ -20,6 +20,8 @@ def sort_by_date(list_of_dictionary: list, is_reverse: bool = True) -> list:
     Функция должна возвращать новый список, отсортированный по дате (date)
     """
 
-    sorted_list_of_dictionary = sorted(list_of_dictionary, key=lambda data: data["date"], reverse=is_reverse)
+    sorted_list_of_dictionary = sorted(
+        list_of_dictionary, key=lambda data: data["date"], reverse=is_reverse
+    )
 
     return sorted_list_of_dictionary
