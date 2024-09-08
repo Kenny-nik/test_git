@@ -3,14 +3,7 @@ def filter_by_state(list_of_dictionary: list, key: str = "EXECUTED") -> list:
     Возвращает новый список словарей, содержащий только те словари,
     у которых ключ state cоответствует указанному значению.
     """
-
-    new_list_of_dictionary = []
-
-    for object in list_of_dictionary:
-        if object["state"] == key:
-            new_list_of_dictionary.append(object)
-
-    return new_list_of_dictionary
+    return [x for x in list_of_dictionary if x["state"] == key]
 
 
 def sort_by_date(list_of_dictionary: list, is_reverse: bool = True) -> list:
