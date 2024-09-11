@@ -1,4 +1,7 @@
-def filter_by_currency(transactions_list: list, valuet: str="USD") -> dict:
+from typing import Any
+
+
+def filter_by_currency(transactions_list: list, valuet: str = "USD") -> Any:
     """
     Возвращает итератор, который поочередно выдает транзакции, где валюта операции соответствует заданной.
     """
@@ -6,11 +9,11 @@ def filter_by_currency(transactions_list: list, valuet: str="USD") -> dict:
         return "Список транзакций пустой"
     else:
         for i in transactions_list:
-            if i['operationAmount']['currency']['code'] == valuet:
+            if i["operationAmount"]["currency"]["code"] == valuet:
                 yield i
 
 
-def transaction_descriptions(transactions_list: list) -> str:
+def transaction_descriptions(transactions_list: list) -> Any:
     """
     Возвращает описание каждой операции по очереди.
     """
@@ -21,11 +24,11 @@ def transaction_descriptions(transactions_list: list) -> str:
             yield i["description"]
 
 
-def card_number_generator(start_gen: int, stop_gen: int) -> str:
+def card_number_generator(start_gen: int, stop_gen: int) -> Any:
     """
     Генерирует номера карт в заданном диапазоне.
     """
-    for i in range(start_gen, stop_gen+1):
+    for i in range(start_gen, stop_gen + 1):
         card_num = "0000000000000000"
-        num = card_num[:-len(str(i))] + str(i)
+        num = card_num[: -len(str(i))] + str(i)
         yield f"{num[0:4]} {num[4:8]} {num[8:12]} {num[12:16]}"
