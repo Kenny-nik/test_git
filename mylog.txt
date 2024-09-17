@@ -1,22 +1,2 @@
 
 my_function ok
-my_function ok
-my_function ok
-my_function ok
-my_function ok
-my_function ok
-my_function ok
-my_function ok
-my_function error: . Inputs: (1, 2), {}
-my_function error: . Inputs: (1, 2), {}
-my_function ok
-my_function error: . Inputs: (1, 2), {}
-my_function error: . Inputs: (1, 2), {}
-my_function ok
-my_function error: . Inputs: (1, 2), {}
-my_function ok
-my_function error: . Inputs: (1, 2), {}
-my_function ok
-my_function ok
-my_function ok
-my_function ok

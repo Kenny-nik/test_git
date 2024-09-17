@@ -6,6 +6,7 @@ def log(filename: Any = None) -> Callable:
     Автоматически логирует начало и конец выполнения функции,
     а также ее результаты или возникшие ошибки.
     """
+
     def my_decorator(func: Callable) -> Callable:
         def wrapper(*args: tuple, **kwargs: dict) -> Any:
             text = ""
@@ -26,12 +27,3 @@ def log(filename: Any = None) -> Callable:
         return wrapper
 
     return my_decorator
-
-
-@log(filename="../mylog.txt")
-def my_function(x, y):
-    return x + y
-
-
-my_function(1, 2)
-
