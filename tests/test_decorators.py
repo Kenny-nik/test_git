@@ -28,7 +28,7 @@ def test_log_error(capsys):
 
 
 def test_log_to_console(capsys):
-    @log(filename="../mylog.txt")
+    @log()
     def my_function(x, y):
         captured = capsys.readouterr()
         assert captured.out.strip() == "my_function ok\n"

@@ -1,21 +1,21 @@
-from typing import Any, Callable
+from typing import Any, Callable, Optional
 
 
-def log(filename: Any = None) -> Callable:
+def log(filename: Optional[str] = None) -> Callable:
     """
     Автоматически логирует начало и конец выполнения функции,
     а также ее результаты или возникшие ошибки.
     """
 
     def my_decorator(func: Callable) -> Callable:
-        def wrapper(*args: tuple, **kwargs: dict) -> Any:
+        def wrapper(*args: Any, **kwargs: Any) -> Any:
             text = ""
             try:
                 result = func(*args, **kwargs)
                 text = f"{func.__name__} ok"
                 return result
             except Exception as error:
-                text = f"{func.__name__} error: {error}. Inputs: {args}, {kwargs}"
+                text = f"{func.__name__} error: {type(error).__name__}. Inputs: {args}, {kwargs}"
                 raise error
             finally:
                 if filename:
