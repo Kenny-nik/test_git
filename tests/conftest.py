@@ -1,3 +1,5 @@
+import pandas as pd
+
 import pytest
 
 
@@ -127,3 +129,32 @@ def transaction_in_eur():
             "currency": {"name": "EUR.", "code": "EUR"},
         }
     }
+
+@pytest.fixture
+def transaction_data_1() -> dict:
+    return {
+        "id": 41428829,
+        "state": "EXECUTED",
+        "date": "2019-07-03T18:35:29.512364",
+        "operationAmount": {"amount": "8221.37", "currency": {"name": "USD", "code": "USD"}},
+        "description": "Перевод организации",
+        "from": "MasterCard 7158300734726758",
+        "to": "Счет 35383033474447895560",
+    }
+
+
+@pytest.fixture
+def test_df() -> pd.DataFrame:
+    test_dict = {
+        "id": [650703.0, 3598919.0],
+        "state": ["EXECUTED", "EXECUTED"],
+        "date": ["2023-09-05T11:30:32Z", "2020-12-06T23:00:58Z"],
+        "amount": [16210.0, 29740.0],
+        "currency_name": ["Sol", "Peso"],
+        "currency_code": ["PEN", "COP"],
+        "from": ["Счет 58803664561298323391", "Discover 3172601889670065"],
+        "to": ["Счет 39745660563456619397", "Discover 0720428384694643"],
+        "description": ["Перевод организации", "Перевод с карты на карту"],
+    }
+
+    return pd.DataFrame(test_dict)
